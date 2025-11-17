@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aube - Full Spectrum Vape Cartridge | Oaziz Extracts</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font (using a system font for Bankster simulation) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles for light, dynamic, and visually attractive look */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f7f7f7; /* Very light gray/near white */
+            color: #1a1a1a; /* Near black text */
+        }
+
+        /* Simulating the impact of a blocky/solid font like Bankster */
+        .bankster-style {
+            font-family: 'Inter', sans-serif; 
+            font-weight: 900; /* Extra Black/Heavy weight */
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        /* Parallax Section Styling for Aube-nature.jpg */
+        .parallax-section {
+            background-image: url('./Aube-nature.jpg');
+            min-height: 80vh; 
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* Highlight shadow for product elements */
+        .aube-shadow {
+            box-shadow: 0 10px 30px -5px rgba(205, 77, 26, 0.4); /* Orange glow */
+        }
+    </style>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aube-orange': '#CD4D1A', /* Main Highlight */
+                        'cannon-blue': '#799fc3', /* Secondary Accent (Cannonfire) */
+                        'base-light': '#f7f7f7',
+                        'base-dark': '#1a1a1a',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-base-light text-base-dark antialiased">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-lg border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <!-- Brand Logo (Cannonfire) -->
+            <a href="#" class="flex items-center space-x-3">
+                <img src="./Cannonfire-Logo.png" alt="Cannonfire Brand Logo" class="h-8 md:h-10 rounded-lg" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/120x40/f7f7f7/1a1a1a?text=CANNONFIRE';">
+            </a>
+            
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#product" class="text-sm font-medium hover:text-aube-orange transition duration-300">Produit</a>
+                <a href="#story" class="text-sm font-medium hover:text-aube-orange transition duration-300">Style de Vie</a>
+                <a href="#launch" class="text-sm font-medium hover:text-aube-orange transition duration-300">Lancement SQDC</a>
+            </nav>
+
+            <!-- Action Button -->
+            <a href="#launch" class="bg-aube-orange text-white bankster-style text-sm py-2 px-4 rounded-lg shadow-xl hover:bg-[#b04216] transition duration-300 transform hover:scale-105">
+                Où Acheter
+            </a>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section (Image Oriented) -->
+    <section id="hero" class="relative h-[90vh] flex flex-col items-center justify-center overflow-hidden">
+        
+        <!-- Background Image (home.png - girl smoking) -->
+        <img src="./home.png" alt="Girl smoking Aube vape, symbolizing freedom and quality" 
+             class="absolute inset-0 w-full h-full object-cover object-bottom"
+             onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/e5e7eb/1a1a1a?text=PREMIUM+LIFESTYLE+IMAGE';">
+        
+        <!-- Overlay for contrast -->
+        <div class="absolute inset-0 bg-base-light/40"></div>
+        
+        <!-- Content -->
+        <div class="relative z-10 text-center max-w-4xl p-6">
+            <img src="./AUBE-LOGO.png" alt="Aube Product Logo" class="h-20 md:h-32 mx-auto mb-4"
+                 onerror="this.onerror=null; this.src='https://placehold.co/300x120/f7f7f7/1a1a1a?text=AUBE';">
+            <h1 class="text-6xl md:text-9xl bankster-style text-base-dark tracking-wider mb-4">
+                SPECTRE COMPLET
+            </h1>
+            <p class="text-xl md:text-3xl text-base-dark font-medium tracking-wide">
+                Haute Qualité. Infusé aux terpènes.
+                <span class="block mt-2 text-aube-orange font-bold">CRAFTÉ À MONTRÉAL PAR OAZIZ EXTRACTS.</span>
+            </p>
+            <a href="#product" class="inline-block mt-10 text-base-dark bankster-style text-lg border-b-4 border-cannon-blue pb-1 hover:text-aube-orange transition duration-300">
+                Découvrez l'expérience Aube &darr;
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. Product Feature Section (Aube-packaging-and-cart.jpg) -->
+    <section id="product" class="py-20 md:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            
+            <!-- Product Image (Aube-packaging-and-cart.jpg) - VISUALLY FIRST -->
+            <div class="relative flex justify-center order-1 md:order-2">
+                <img src="./Aube-packaging-and-cart.jpg" alt="Aube vape cartridge and product packaging" 
+                     class="w-full max-w-sm md:max-w-md rounded-xl aube-shadow transition duration-500 hover:scale-[1.03] border-4 border-aube-orange/50"
+                     onerror="this.onerror=null; this.src='https://placehold.co/600x600/f7f7f7/aube-orange?text=AUBE+PRODUCT';">
+            </div>
+
+            <!-- Text Features -->
+            <div class="order-2 md:order-1">
+                <span class="text-lg uppercase tracking-widest text-cannon-blue font-bold">Innovation Canadienne</span>
+                <h2 class="text-4xl md:text-6xl bankster-style leading-none mt-3 mb-6">
+                    Performance <span class="text-aube-orange">Sans</span> Compromis
+                </h2>
+                <p class="text-xl text-gray-700 mb-8">
+                    Chaque cartouche Aube est le résultat d'un procédé d'extraction méticuleux. Notre **distillat Full Spectrum** capture l'intégralité des cannabinoïdes pour un effet d'entourage prononcé, infusé uniquement avec des terpènes de cannabis authentiques.
+                </p>
+
+                <ul class="space-y-5">
+                    <li class="flex items-start">
+                        <span class="text-aube-orange text-2xl mr-3">&bull;</span>
+                        <p class="text-lg text-gray-800"><strong class="text-base-dark">Distillat Full Spectrum:</strong> Synergie maximale pour une expérience riche.</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-aube-orange text-2xl mr-3">&bull;</span>
+                        <p class="text-lg text-gray-800"><strong class="text-base-dark">Terpènes Pures Cannabis:</strong> Profil aromatique fidèle et puissant.</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-aube-orange text-2xl mr-3">&bull;</span>
+                        <p class="text-lg text-gray-800"><strong class="text-base-dark">Artisanat Montréalais:</strong> Qualité et expertise certifiées par Oaziz Extracts.</p>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3. Parallax Section (Aube-nature.jpg) -->
+    <section class="parallax-section flex items-center justify-center">
+        <div class="p-12 bg-base-dark/60 backdrop-blur-sm rounded-xl shadow-2xl text-center max-w-2xl">
+            <h3 class="text-4xl md:text-7xl bankster-style text-aube-orange leading-tight">
+                LA PURETÉ RENCONTRE LA PUISSANCE
+            </h3>
+            <p class="text-xl text-gray-100 mt-4">
+                Inspirez le meilleur de la nature.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- 4. Dynamic Lifestyle Image Gallery (woods, ski, Aube-nature) -->
+    <section id="story" class="py-20 md:py-32 bg-base-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-center text-4xl md:text-6xl bankster-style mb-16 text-base-dark">
+                OÙ QUE VOTRE <span class="text-cannon-blue">JOURNÉE</span> VOUS MÈNE
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Image 1: Woods -->
+                <div class="group relative overflow-hidden rounded-xl shadow-xl hover:shadow-cannon-blue/50 transition duration-500">
+                    <img src="./woods.png" alt="Guy smoking Aube vape in the woods" 
+                         class="w-full h-96 object-cover object-center transform group-hover:scale-110 transition duration-700"
+                         onerror="this.onerror=null; this.src='https://placehold.co/800x600/f7f7f7/1a1a1a?text=WOODS+SCENE';">
+                    <div class="absolute inset-0 bg-base-dark/30 group-hover:bg-base-dark/10 transition duration-500 flex items-end p-6">
+                        <p class="text-xl font-semibold text-white bankster-style tracking-normal">La Sérénité des Bois.</p>
+                    </div>
+                </div>
+
+                <!-- Image 2: Ski -->
+                <div class="group relative overflow-hidden rounded-xl shadow-xl hover:shadow-cannon-blue/50 transition duration-500">
+                    <img src="./ski.png" alt="Group of friends smoking Aube vape during a ski session break" 
+                         class="w-full h-96 object-cover object-center transform group-hover:scale-110 transition duration-700"
+                         onerror="this.onerror=null; this.src='https://placehold.co/800x600/f7f7f7/1a1a1a?text=SKI+SCENE';">
+                    <div class="absolute inset-0 bg-base-dark/30 group-hover:bg-base-dark/10 transition duration-500 flex items-end p-6">
+                        <p class="text-xl font-semibold text-white bankster-style tracking-normal">L'Altitude et l'Énergie.</p>
+                    </div>
+                </div>
+
+                <!-- Image 3: Aube-packaging-mockup -->
+                <div class="group relative overflow-hidden rounded-xl shadow-xl hover:shadow-cannon-blue/50 transition duration-500">
+                    <img src="./Cannonfire-Aube-packaging-mockup.png" alt="High-quality product packaging mockup" 
+                         class="w-full h-96 object-cover object-center transform group-hover:scale-110 transition duration-700"
+                         onerror="this.onerror=null; this.src='https://placehold.co/800x600/f7f7f7/1a1a1a?text=PACKAGING+MOCKUP';">
+                    <div class="absolute inset-0 bg-base-dark/30 group-hover:bg-base-dark/10 transition duration-500 flex items-end p-6">
+                        <p class="text-xl font-semibold text-white bankster-style tracking-normal">Le Design Exclusif.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. Launch Announcement CTA Section -->
+    <section id="launch" class="py-24 bg-white border-t border-gray-200">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 bg-base-light p-10 rounded-xl shadow-2xl border-4 border-cannon-blue/30">
+            <h2 class="text-5xl md:text-7xl bankster-style text-aube-orange mb-4">
+                LANCEMENT LE 24 NOVEMBRE
+            </h2>
+            <p class="text-2xl text-base-dark font-medium mb-8">
+                Exclusivement disponible via la <strong class="text-aube-orange">SQDC</strong> à travers le Québec.
+            </p>
+            <p class="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
+                Soyez parmi les premiers à faire l'expérience de la qualité supérieure Full Spectrum offerte par Oaziz Extracts.
+            </p>
+            
+            <a href="#" class="inline-block bg-base-dark text-white bankster-style py-3 px-10 rounded-lg text-xl shadow-2xl hover:bg-gray-700 transition duration-300 transform hover:scale-105 mt-4">
+                Visiter le site de la SQDC
+            </a>
+            
+            <p class="text-xs text-gray-500 mt-8">
+                Produit réservé aux consommateurs de 21 ans et plus.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-base-light border-t border-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Company Logo -->
+            <img src="./Oaziz-Logo.webp" alt="Oaziz Extracts Company Logo" class="h-10 mx-auto mb-6 opacity-80"
+                 onerror="this.onerror=null; this.src='https://placehold.co/150x50/f7f7f7/1a1a1a?text=OAZIZ+EXTRACTS';">
+
+            <!-- Links/Legal -->
+            <div class="flex justify-center space-x-6 text-sm text-gray-600 mb-6">
+                <p>SQDC Exclusive • Vente au Québec</p>
+            </div>
+            
+            <p class="text-xs text-gray-500">
+                &copy; <span id="year"></span> Oaziz Extracts. Tous droits réservés.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in the footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
