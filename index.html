@@ -101,6 +101,12 @@
 
 <body class="antialiased">
 
+    <div id="language-switcher" class="fixed top-4 right-4 z-50">
+        <button onclick="toggleLanguage()" class="bg-white/90 text-base-dark border border-base-dark/20 text-sm font-semibold py-1 px-3 rounded-full shadow-lg hover:bg-base-dark hover:text-white transition duration-300">
+            EN
+        </button>
+    </div>
+
     <div id="hero" class="split-section bg-base-dark">
         
         <div class="img-wrapper order-1 lg:order-1">
@@ -112,8 +118,8 @@
         <div class="content-col order-2 lg:order-2 bg-base-dark text-white">
             <div class="max-w-lg relative z-10 p-8 lg:p-0">
                 
-                <img src="./Cannonfire-Logo-transparent.png" alt="Cannonfire Logo" class="h-16 w-auto mb-8"
-                     onerror="this.src='https://placehold.co/200x60/111/799fc3?text=Cannonfire+Logo'">
+                <img src="./Cannonfire-Logo-transparent.png" alt="Cannonfire Logo" class="h-80 w-auto mb-8"
+                     onerror="this.src='https://placehold.co/320x100/111/799fc3?text=Cannonfire+Logo'">
 
                 <div class="mb-4 flex items-center space-x-2">
                     <span class="bg-aube-orange/20 border border-aube-orange text-aube-orange text-xs font-bold px-2 py-1 rounded uppercase tracking-widest">
@@ -366,6 +372,23 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const button = document.querySelector('#language-switcher button');
+            
+            // NOTE: This only changes the button label and the HTML lang attribute.
+            // For a real switch, you would need translated content loaded here.
+            if (html.lang === 'fr') {
+                html.lang = 'en';
+                button.textContent = 'FR'; // Now displays FR, meaning 'Click here for French'
+                console.log('Language switched to English (en).');
+            } else {
+                html.lang = 'fr';
+                button.textContent = 'EN'; // Now displays EN, meaning 'Click here for English'
+                console.log('Language switched back to French (fr).');
+            }
+        }
     </script>
 </body>
 </html>
