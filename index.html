@@ -41,8 +41,8 @@
         .font-bankster {
             font-family: 'Archivo Black', sans-serif;
             text-transform: uppercase;
-            letter-spacing: -0.02em; /* Tight spacing like Bankster */
-            line-height: 0.85;
+            letter-spacing: -0.02em;
+            line-height: 0.9;
         }
 
         /* LAYOUT GRID */
@@ -50,7 +50,7 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            min-height: 100vh; /* Full screen height */
+            min-height: 100vh;
         }
 
         /* IMAGE HANDLING */
@@ -84,8 +84,8 @@
             /* The image column */
             .img-wrapper {
                 width: 50%;
-                height: auto; /* Reset fixed height */
-                min-height: 100vh; /* Match section height */
+                height: auto; 
+                min-height: 100vh; 
                 position: relative;
             }
             .img-cover {
@@ -102,18 +102,20 @@
         
         <div class="img-wrapper order-1 lg:order-1">
             <img src="./home.png" alt="Aube Hero" class="img-cover opacity-90"
-                 onerror="this.src='https://placehold.co/1000x1000/222/CD4D1A?text=IMAGE+MISSING+home.png'">
+                 onerror="this.src='https://placehold.co/1000x1000/222/CD4D1A?text=home.png'">
             <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent"></div>
         </div>
 
         <div class="content-col order-2 lg:order-2 bg-base-dark text-white">
             <div class="max-w-lg relative z-10 p-8 lg:p-0">
-                <h1 class="font-bankster text-6xl lg:text-8xl mb-6 flex items-end">
+                
+                <h1 class="font-bankster text-6xl lg:text-8xl mb-6 leading-tight">
                     L'
-                    <span class="inline-block bg-white p-2 rounded-lg -mb-2 mx-1 shadow-lg">
-                        <img src="./AUBE-LOGO.png" alt="Aube Logo" class="h-12 lg:h-16 w-auto"
+                    <span class="inline-flex items-center justify-center bg-white px-2 rounded-md transform translate-y-1 lg:translate-y-2 h-[0.75em] w-auto mx-1 align-baseline">
+                        <img src="./AUBE-LOGO.png" alt="Aube Logo" class="h-full w-auto object-contain py-1"
                              onerror="this.style.display='none'">
                     </span>
+                    <br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-aube-orange to-orange-400">"Full Spectrum"</span>
                 </h1>
 
@@ -156,14 +158,15 @@
 
         <div class="img-wrapper order-1 lg:order-2 bg-gray-100">
             <img src="./Aube-packaging-and-cart.jpg" alt="Cartridge Macro" class="img-cover"
-                 onerror="this.src='https://placehold.co/1000x1000/eee/CD4D1A?text=IMAGE+MISSING+packaging.jpg'">
+                 onerror="this.src='https://placehold.co/1000x1000/eee/CD4D1A?text=packaging.jpg'">
         </div>
     </div>
 
     <div id="lifestyle-ski" class="split-section">
+        
         <div class="img-wrapper order-1 lg:order-1 bg-gray-800">
-            <img src="./ski.png" alt="Group of friends skiing and using Aube vape" class="img-cover"
-                 onerror="this.src='https://placehold.co/1000x1000/333/799fc3?text=IMAGE+MISSING+ski.png'">
+            <img src="./ski.png" alt="Ski Lifestyle" class="img-cover"
+                 onerror="this.src='https://placehold.co/1000x1000/333/799fc3?text=ski.png'">
             <div class="absolute inset-0 bg-cannon-blue/20 mix-blend-multiply"></div>
         </div>
 
@@ -178,7 +181,7 @@
                 </h2>
                 
                 <p class="text-white/90 text-xl mb-8 leading-relaxed font-medium">
-                    Des pentes enneigées aux moments entre amis, Aube complète parfaitement votre soif d'aventure et de partage. Profitez d'une qualité inégalée, où que l'action vous mène.
+                    Des pentes enneigées aux moments entre amis, Aube complète parfaitement votre soif d'aventure et de partage.
                 </p>
 
                 <div class="inline-block bg-white text-cannon-blue font-bankster text-lg px-6 py-3 shadow-lg transform rotate-2">
@@ -189,6 +192,7 @@
     </div>
 
     <div id="lifestyle-woods" class="split-section">
+        
         <div class="content-col order-2 lg:order-1 bg-base-dark text-white">
             <div class="max-w-lg p-8 lg:p-0">
                 <span class="font-mono uppercase tracking-widest text-aube-orange/60 font-bold text-sm mb-4 block">
@@ -200,7 +204,7 @@
                 </h2>
                 
                 <p class="text-white/90 text-xl mb-8 leading-relaxed font-medium">
-                    Plongez dans la sérénité des grands espaces. Aube est le compagnon idéal pour une pause contemplative, où la nature et la pureté se rencontrent.
+                    Plongez dans la sérénité des grands espaces. Aube est le compagnon idéal pour une pause contemplative.
                 </p>
 
                 <div class="inline-block bg-aube-orange text-white font-bankster text-lg px-6 py-3 shadow-lg transform -rotate-2">
@@ -210,12 +214,11 @@
         </div>
 
         <div class="img-wrapper order-1 lg:order-2 bg-gray-800">
-            <img src="./woods.png" alt="Guy using Aube vape in the woods" class="img-cover"
-                 onerror="this.src='https://placehold.co/1000x1000/333/CD4D1A?text=IMAGE+MISSING+woods.png'">
-            <div class="absolute inset-0 bg-aube-orange/20 mix-blend-multiply"></div>
+            <img src="./woods.png" alt="Woods Lifestyle" class="img-cover"
+                 onerror="this.src='https://placehold.co/1000x1000/333/CD4D1A?text=woods.png'">
+            <div class="absolute inset-0 bg-aube-orange/10 mix-blend-multiply"></div>
         </div>
     </div>
-
 
     <div id="launch" class="split-section">
         
@@ -234,7 +237,7 @@
                 </h3>
 
                 <p class="text-lg text-gray-600 mb-10 font-medium">
-                    L'attente tire à sa fin. Soyez les premiers à découvrir la nouvelle référence Full Spectrum au Québec.
+                    Soyez les premiers à découvrir la nouvelle référence Full Spectrum au Québec.
                 </p>
 
                 <a href="#" class="block w-full text-center bg-base-dark text-white font-bankster text-xl py-5 hover:bg-aube-orange hover:scale-[1.02] transition-all duration-300 shadow-2xl">
@@ -253,7 +256,7 @@
                  
                  <img src="./Cannonfire-Aube-packaging-mockup.png" alt="Packaging Mockup" 
                       class="relative z-10 w-4/5 max-w-md drop-shadow-2xl"
-                      onerror="this.src='https://placehold.co/800x800/fff/CD4D1A?text=IMAGE+MISSING+mockup.png'">
+                      onerror="this.src='https://placehold.co/800x800/fff/CD4D1A?text=mockup.png'">
             </div>
         </div>
     </div>
@@ -268,7 +271,7 @@
                 &copy; <span id="year"></span> Oaziz Extracts Inc. Tous droits réservés.
             </p>
             <p class="text-xs text-gray-600">
-                Produit réservé aux consommateurs de 18 ans et plus.
+                Produit réservé aux consommateurs de 21 ans et plus.
             </p>
         </div>
     </footer>
