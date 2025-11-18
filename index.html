@@ -20,13 +20,14 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         display: ['Archivo Black', 'sans-serif'], /* The Bankster substitute */
+                        mono: ['Courier Prime', 'monospace'], /* For Lot Numbers */
                     }
                 }
             }
         }
     </script>
     
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Courier+Prime:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     
     <style>
         /* GLOBAL RESET */
@@ -109,8 +110,17 @@
         <div class="content-col order-2 lg:order-2 bg-base-dark text-white">
             <div class="max-w-lg relative z-10 p-8 lg:p-0">
                 
-                <img src="./Cannonfire-Logo.png" alt="Cannonfire Logo" class="h-10 w-auto mb-4 mix-blend-lighten"
+                <img src="./Cannonfire-Logo.png" alt="Cannonfire Logo" class="h-10 w-auto mb-6 mix-blend-lighten"
                      onerror="this.src='https://placehold.co/150x40/111/799fc3?text=Cannonfire+Logo'">
+
+                <div class="mb-4 flex items-center space-x-2">
+                    <span class="bg-aube-orange/20 border border-aube-orange text-aube-orange text-xs font-bold px-2 py-1 rounded uppercase tracking-widest">
+                        Cartouche Vape 1mL
+                    </span>
+                    <span class="text-gray-500 text-xs font-bold uppercase tracking-widest">
+                        Format 510
+                    </span>
+                </div>
 
                 <h1 class="font-bankster text-6xl lg:text-8xl mb-6 leading-tight">
                     L'
@@ -254,12 +264,85 @@
         </div>
 
         <div class="img-wrapper order-1 lg:order-2 bg-gray-50">
-            <div class="relative w-full h-full flex items-center justify-center">
-                 <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#CD4D1A 1px, transparent 1px); background-size: 20px 20px;"></div>
-                 
-                 <img src="./Cannonfire-Aube-packaging-mockup.png" alt="Packaging Mockup" 
-                      class="relative z-10 w-4/5 max-w-md drop-shadow-2xl"
-                      onerror="this.src='https://placehold.co/800x800/fff/CD4D1A?text=mockup.png'">
+            <img src="./Aube-product-SQDC.jpg" alt="Aube SQDC Product" class="img-cover"
+                 onerror="this.src='https://placehold.co/1000x1000/fff/CD4D1A?text=Aube-product-SQDC.jpg'">
+        </div>
+    </div>
+
+    <div id="lots" class="bg-gray-200 py-20 border-t border-gray-300 text-base-dark">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="font-bankster text-3xl md:text-4xl mb-12 text-center text-base-dark/80">
+                Information des Lots
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="bg-white p-8 shadow-lg border-t-8 border-aube-orange rounded-sm hover:shadow-xl transition-shadow">
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="font-bankster text-2xl text-base-dark">AUBE 1</h3>
+                        <span class="font-mono bg-gray-100 px-2 py-1 text-sm font-bold text-gray-600">LOT #68781</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-y-4 mb-6 text-sm md:text-base">
+                        <div>
+                            <p class="text-gray-500 text-xs uppercase tracking-widest">THC</p>
+                            <p class="font-bold text-xl">25.55%</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-500 text-xs uppercase tracking-widest">CBD</p>
+                            <p class="font-bold text-xl">32.21%</p>
+                        </div>
+                        <div class="col-span-2">
+                            <p class="text-gray-500 text-xs uppercase tracking-widest">Terpènes Totaux</p>
+                            <p class="font-bold text-xl text-aube-orange">9.968%</p>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-gray-100 pt-4 space-y-2">
+                        <div class="flex justify-between text-sm font-mono text-gray-600">
+                            <span>Unités:</span>
+                            <span class="font-bold text-base-dark">11,088</span>
+                        </div>
+                        <div class="flex justify-between text-sm font-mono text-gray-600">
+                            <span>Emballé le:</span>
+                            <span class="font-bold text-base-dark">10 Nov 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 shadow-lg border-t-8 border-cannon-blue rounded-sm hover:shadow-xl transition-shadow">
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="font-bankster text-2xl text-base-dark">AUBE 2</h3>
+                        <span class="font-mono bg-gray-100 px-2 py-1 text-sm font-bold text-gray-600">LOT #71382</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-y-4 mb-6 text-sm md:text-base">
+                        <div>
+                            <p class="text-gray-500 text-xs uppercase tracking-widest">THC</p>
+                            <p class="font-bold text-xl">27.39%</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-500 text-xs uppercase tracking-widest">CBD</p>
+                            <p class="font-bold text-xl">33.90%</p>
+                        </div>
+                        <div class="col-span-2">
+                            <p class="text-gray-500 text-xs uppercase tracking-widest">Terpènes Totaux</p>
+                            <p class="font-bold text-xl text-cannon-blue">8.374%</p>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-gray-100 pt-4 space-y-2">
+                        <div class="flex justify-between text-sm font-mono text-gray-600">
+                            <span>Unités:</span>
+                            <span class="font-bold text-base-dark">9,336</span>
+                        </div>
+                        <div class="flex justify-between text-sm font-mono text-gray-600">
+                            <span>Emballé le:</span>
+                            <span class="font-bold text-base-dark">10 Nov 2025</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
