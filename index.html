@@ -108,13 +108,13 @@
 
         <div class="content-col order-2 lg:order-2 bg-base-dark text-white">
             <div class="max-w-lg relative z-10 p-8 lg:p-0">
-                <img src="./AUBE-LOGO.png" alt="Aube Logo" class="h-20 mb-10"
-                     onerror="this.style.display='none'">
-
-                <h1 class="font-bankster text-6xl lg:text-8xl mb-6">
-                    L'Aube <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-aube-orange to-orange-400">Du Spectre</span> <br>
-                    Complet
+                <h1 class="font-bankster text-6xl lg:text-8xl mb-6 flex items-end">
+                    L'
+                    <span class="inline-block bg-white p-2 rounded-lg -mb-2 mx-1 shadow-lg">
+                        <img src="./AUBE-LOGO.png" alt="Aube Logo" class="h-12 lg:h-16 w-auto"
+                             onerror="this.style.display='none'">
+                    </span>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-aube-orange to-orange-400">"Full Spectrum"</span>
                 </h1>
 
                 <p class="text-lg lg:text-xl text-gray-400 font-medium mb-10 leading-relaxed">
@@ -160,31 +160,62 @@
         </div>
     </div>
 
-    <div id="lifestyle" class="split-section">
-        
+    <div id="lifestyle-ski" class="split-section">
         <div class="img-wrapper order-1 lg:order-1 bg-gray-800">
-            <img src="./Aube-nature.jpg" alt="Nature Lifestyle" class="img-cover"
-                 onerror="this.src='https://placehold.co/1000x1000/333/799fc3?text=IMAGE+MISSING+nature.jpg'">
-             <div class="absolute inset-0 bg-cannon-blue/20 mix-blend-multiply"></div>
+            <img src="./ski.png" alt="Group of friends skiing and using Aube vape" class="img-cover"
+                 onerror="this.src='https://placehold.co/1000x1000/333/799fc3?text=IMAGE+MISSING+ski.png'">
+            <div class="absolute inset-0 bg-cannon-blue/20 mix-blend-multiply"></div>
         </div>
 
         <div class="content-col order-2 lg:order-2 bg-cannon-blue text-base-dark">
             <div class="max-w-lg p-8 lg:p-0">
+                <span class="font-mono uppercase tracking-widest text-white/60 font-bold text-sm mb-4 block">
+                    Style de vie Q.C.
+                </span>
                 <h2 class="font-bankster text-5xl lg:text-7xl mb-6 text-white">
-                    Nature <br>
-                    <span class="text-base-dark">Urbaine</span>
+                    L'Évasion <br>
+                    <span class="text-base-dark">Active</span>
                 </h2>
                 
                 <p class="text-white/90 text-xl mb-8 leading-relaxed font-medium">
-                    Des forêts du Québec aux rues de Montréal. Aube est conçu pour ceux qui cherchent l'équilibre entre l'aventure et la détente.
+                    Des pentes enneigées aux moments entre amis, Aube complète parfaitement votre soif d'aventure et de partage. Profitez d'une qualité inégalée, où que l'action vous mène.
                 </p>
 
-                <div class="inline-block bg-white text-cannon-blue font-bankster text-lg px-6 py-3 shadow-lg transform -rotate-1">
-                    "Où que la vie vous mène"
+                <div class="inline-block bg-white text-cannon-blue font-bankster text-lg px-6 py-3 shadow-lg transform rotate-2">
+                    Partagez l'instant
                 </div>
             </div>
         </div>
     </div>
+
+    <div id="lifestyle-woods" class="split-section">
+        <div class="content-col order-2 lg:order-1 bg-base-dark text-white">
+            <div class="max-w-lg p-8 lg:p-0">
+                <span class="font-mono uppercase tracking-widest text-aube-orange/60 font-bold text-sm mb-4 block">
+                    Votre Moment
+                </span>
+                <h2 class="font-bankster text-5xl lg:text-7xl mb-6 text-white">
+                    Nature <br>
+                    <span class="text-aube-orange">Retrouvée</span>
+                </h2>
+                
+                <p class="text-white/90 text-xl mb-8 leading-relaxed font-medium">
+                    Plongez dans la sérénité des grands espaces. Aube est le compagnon idéal pour une pause contemplative, où la nature et la pureté se rencontrent.
+                </p>
+
+                <div class="inline-block bg-aube-orange text-white font-bankster text-lg px-6 py-3 shadow-lg transform -rotate-2">
+                    Respirez l'essentiel
+                </div>
+            </div>
+        </div>
+
+        <div class="img-wrapper order-1 lg:order-2 bg-gray-800">
+            <img src="./woods.png" alt="Guy using Aube vape in the woods" class="img-cover"
+                 onerror="this.src='https://placehold.co/1000x1000/333/CD4D1A?text=IMAGE+MISSING+woods.png'">
+            <div class="absolute inset-0 bg-aube-orange/20 mix-blend-multiply"></div>
+        </div>
+    </div>
+
 
     <div id="launch" class="split-section">
         
@@ -227,10 +258,19 @@
         </div>
     </div>
 
-    <footer class="bg-base-dark text-white py-6 text-center border-t border-white/10">
-        <p class="text-xs text-gray-500 font-mono uppercase tracking-widest">
-            &copy; <span id="year"></span> Oaziz Extracts Inc.
-        </p>
+    <footer class="bg-base-dark text-white py-10 text-center border-t border-white/10">
+        <div class="max-w-4xl mx-auto px-4">
+            <a href="https://www.oaziz.ca" target="_blank" rel="noopener noreferrer" class="inline-block mb-6 opacity-80 hover:opacity-100 transition-opacity duration-300">
+                <img src="./Oaziz-Logo.webp" alt="Oaziz Extracts Logo" class="h-12 w-auto mx-auto"
+                     onerror="this.src='https://placehold.co/150x50/333/eee?text=OAZIZ+EXTRACTS'">
+            </a>
+            <p class="text-sm text-gray-500 font-mono uppercase tracking-widest mb-2">
+                &copy; <span id="year"></span> Oaziz Extracts Inc. Tous droits réservés.
+            </p>
+            <p class="text-xs text-gray-600">
+                Produit réservé aux consommateurs de 18 ans et plus.
+            </p>
+        </div>
     </footer>
 
     <script>
