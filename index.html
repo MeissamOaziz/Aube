@@ -4,237 +4,210 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aube - Full Spectrum Vape Cartridge | Oaziz Extracts</title>
-    <!-- Load Tailwind CSS (MUST be first) -->
+    
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Custom Tailwind Configuration (MOVED HERE with check for guaranteed access) -->
     <script>
-        // FIX: The defensive check ensures 'tailwind' object is defined before configuration.
         if (typeof tailwind !== 'undefined') {
             tailwind.config = {
                 theme: {
                     extend: {
                         colors: {
-                            'aube-orange': '#CD4D1A', /* Main Highlight */
-                            'cannon-blue': '#799fc3', /* Secondary Accent (Cannonfire) */
+                            'aube-orange': '#CD4D1A',
+                            'cannon-blue': '#799fc3',
                             'base-light': '#f7f7f7',
                             'base-dark': '#1a1a1a',
+                        },
+                        fontFamily: {
+                            sans: ['Inter', 'sans-serif'],
                         }
                     }
                 }
             };
-        } else {
-             // Fallback/debugging: logs an error if the CDN load fails silently.
-             console.error("Tailwind CSS CDN failed to load the 'tailwind' object.");
         }
     </script>
     
-    <!-- Load Inter font (simulating Bankster look) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     
     <style>
-        /* Custom styles for light, dynamic, and visually attractive look */
         body {
             font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-            background-color: #f7f7f7; /* Very light gray/near white */
-            color: #1a1a1a; /* Near black text */
+            background-color: #f7f7f7;
+            color: #1a1a1a;
+            overflow-x: hidden;
         }
 
-        /* Simulating the impact of a blocky/solid font like Bankster */
+        /* "Bankster" Simulation Style */
         .bankster-style {
-            font-family: 'Inter', sans-serif; 
-            font-weight: 900; /* Extra Black/Heavy weight */
-            letter-spacing: 0.1em;
+            font-weight: 900; /* Extra Black */
             text-transform: uppercase;
-            line-height: 1;
+            letter-spacing: 0.05em;
+            line-height: 0.9;
         }
 
-        /* Full height for split sections (ensures content fills the viewport) */
+        /* Section Sizing */
         .split-section {
             min-height: 100vh;
+            width: 100%;
         }
 
-        /* Image container to ensure background image covers the whole column */
-        .image-bg-cover {
-            background-size: cover;
+        /* Parallax Effect for the Nature Image */
+        .parallax-bg {
+            background-attachment: fixed;
             background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
-        /* Highlight shadow for product elements */
-        .aube-shadow {
-            box-shadow: 0 10px 30px -5px rgba(205, 77, 26, 0.4); /* Orange glow */
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .parallax-bg {
+                background-attachment: scroll; /* Parallax can be jittery on mobile */
+                min-height: 50vh;
+            }
+            .split-section {
+                min-height: auto; /* Allow natural height on mobile */
+            }
         }
     </style>
 </head>
 
-<body class="bg-base-light text-base-dark antialiased">
+<body class="antialiased">
 
-    <!-- 1. Hero Section: Image Left, Text Right (home.png) -->
     <section id="hero" class="split-section grid grid-cols-1 md:grid-cols-2">
         
-        <!-- Image Column (Left on Desktop, Top on Mobile) -->
-        <div class="md:min-h-screen image-bg-cover relative" style="background-image: url('./home.png');">
-            <!-- Overlay for contrast if needed, subtle for light background -->
-            <div class="absolute inset-0 bg-base-dark/10"></div> 
-            <!-- For mobile, we might want to ensure the image is visible -->
-            <div class="h-[50vh] md:h-full block md:hidden"></div>
+        <div class="relative h-[50vh] md:h-auto w-full bg-gray-900 overflow-hidden">
+            <img src="./home.png" alt="Aube Vape Hero" 
+                 class="absolute inset-0 w-full h-full object-cover opacity-90"
+                 onerror="this.src='https://placehold.co/800x1200/1a1a1a/CD4D1A?text=HOME+IMAGE'">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
         </div>
-        
-        <!-- Content Column (Right on Desktop, Bottom on Mobile) -->
-        <div class="flex items-center justify-center p-8 md:p-16">
-            <div class="max-w-xl">
-                <img src="./AUBE-LOGO.png" alt="Aube Product Logo" class="h-20 md:h-28 mb-6"
-                     onerror="this.onerror=null; this.src='https://placehold.co/300x120/f7f7f7/1a1a1a?text=AUBE';">
-                
-                <h1 class="text-6xl md:text-8xl bankster-style text-base-dark tracking-wider mb-6">
-                    L'AUBE DU <span class="text-aube-orange">SPECTRE COMPLET</span>
+
+        <div class="flex items-center justify-center p-10 md:p-20 bg-base-light">
+            <div class="max-w-lg">
+                <img src="./AUBE-LOGO.png" alt="Aube Logo" class="h-24 mb-8"
+                     onerror="this.style.display='none';"> <h1 class="text-6xl md:text-8xl bankster-style text-base-dark mb-6">
+                    L'Aube du <br>
+                    <span class="text-aube-orange">Spectre</span> <span class="text-cannon-blue">Complet</span>
                 </h1>
-                
-                <p class="text-xl md:text-2xl text-gray-700 font-medium tracking-wide mb-8">
-                    Notre promesse : Distillat Full Spectrum Haute Qualité. Infusé aux terpènes de cannabis.
+
+                <p class="text-xl md:text-2xl text-gray-600 font-medium leading-relaxed mb-10">
+                    Une expérience de vapotage sans compromis. Distillat Full Spectrum infusé aux terpènes de cannabis authentiques.
                 </p>
-                
-                <a href="#product" class="inline-block bg-cannon-blue text-white bankster-style text-lg py-3 px-8 rounded-lg shadow-xl hover:bg-[#6c87a5] transition duration-300 transform hover:scale-105">
-                    Découvrez Aube &darr;
+
+                <a href="#product" class="group inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-aube-orange rounded-none hover:bg-base-dark bankster-style tracking-widest">
+                    Découvrir
+                    <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 2. Product Feature Section: Text Left, Image Right (Aube-packaging-and-cart.jpg) -->
-    <section id="product" class="split-section grid grid-cols-1 md:grid-cols-2 bg-white">
+    <section id="product" class="split-section grid grid-cols-1 md:grid-cols-2">
         
-        <!-- Content Column (Left on Desktop, Top on Mobile) -->
-        <div class="flex items-center justify-center p-8 md:p-16 order-2 md:order-1">
-            <div class="max-w-xl">
-                <span class="text-lg uppercase tracking-widest text-aube-orange font-bold">L'Artisanat Montréalais</span>
-                <h2 class="text-4xl md:text-6xl bankster-style leading-none mt-3 mb-6">
-                    Performance <span class="text-cannon-blue">Sans</span> Compromis
+        <div class="order-2 md:order-1 flex items-center justify-center p-10 md:p-20 bg-base-dark text-white">
+            <div class="max-w-lg">
+                <span class="text-aube-orange font-bold tracking-widest uppercase text-sm mb-2 block">Curé à Montréal</span>
+                <h2 class="text-5xl md:text-7xl bankster-style mb-8">
+                    Pureté <br>
+                    <span class="text-cannon-blue">Absolue</span>
                 </h2>
-                
-                <p class="text-xl text-gray-700 mb-10">
-                    Chaque cartouche Aube est conçue par **Oaziz Extracts** et "curée" à Montréal. Nous capturons l'intégralité des cannabinoïdes pour un effet d'entourage prononcé, sans compromis sur la pureté.
-                </p>
 
-                <ul class="space-y-4">
-                    <li class="flex items-start">
-                        <span class="text-cannon-blue text-2xl mr-3">&bull;</span>
-                        <p class="text-lg text-gray-800"><strong class="text-base-dark">Full Spectrum:</strong> Synergie maximale pour un effet complet.</p>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-cannon-blue text-2xl mr-3">&bull;</span>
-                        <p class="text-lg text-gray-800"><strong class="text-base-dark">Terpènes Pures:</strong> Goût fidèle dérivé de la plante mère.</p>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-cannon-blue text-2xl mr-3">&bull;</span>
-                        <p class="text-lg text-gray-800"><strong class="text-base-dark">Qualité Oaziz:</strong> Expertise certifiée, crafté localement.</p>
-                    </li>
-                </ul>
+                <div class="space-y-8 text-lg text-gray-300">
+                    <div>
+                        <h3 class="text-white font-bold text-xl mb-1">Full Spectrum</h3>
+                        <p>Nous capturons l'intégralité des cannabinoïdes pour un effet d'entourage maximal.</p>
+                    </div>
+                    <div class="w-full h-px bg-gray-700"></div>
+                    <div>
+                        <h3 class="text-white font-bold text-xl mb-1">Terpènes Authentiques</h3>
+                        <p>Un goût fidèle dérivé de la plante mère, sans additifs artificiels.</p>
+                    </div>
+                    <div class="w-full h-px bg-gray-700"></div>
+                    <div>
+                        <h3 class="text-white font-bold text-xl mb-1">Qualité Oaziz</h3>
+                        <p>Conçu par Oaziz Extracts, expert en extraction.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Image Column (Right on Desktop, Bottom on Mobile) -->
-        <div class="md:min-h-screen flex items-center justify-center p-8 md:p-0 order-1 md:order-2 bg-base-light">
-            <img src="./Aube-packaging-and-cart.jpg" alt="Aube vape cartridge and product packaging" 
-                 class="w-full max-w-sm md:max-w-md rounded-xl aube-shadow transition duration-500 hover:scale-[1.03] border-4 border-aube-orange/50"
-                 onerror="this.onerror=null; this.src='https://placehold.co/600x600/f7f7f7/aube-orange?text=AUBE+PRODUCT';">
+        <div class="order-1 md:order-2 relative h-[50vh] md:h-auto w-full bg-gray-200">
+            <img src="./Aube-packaging-and-cart.jpg" alt="Cartridge Detail" 
+                 class="absolute inset-0 w-full h-full object-cover"
+                 onerror="this.src='https://placehold.co/800x1200/e5e5e5/1a1a1a?text=PRODUCT+MACRO'">
         </div>
     </section>
 
-    <!-- 3. Lifestyle Section: Image Left, Text Right (Woods & Ski collage) -->
-    <section id="story" class="split-section grid grid-cols-1 md:grid-cols-2">
+    <section id="lifestyle" class="split-section grid grid-cols-1 md:grid-cols-2">
         
-        <!-- Image Column (Left on Desktop, Top on Mobile) -->
-        <div class="md:min-h-screen relative p-4 md:p-8 order-1 md:order-1 bg-gray-100">
-            <div class="grid grid-cols-2 grid-rows-2 h-full gap-4">
-                <img src="./woods.png" alt="Guy smoking Aube vape in the woods" 
-                     class="w-full h-full object-cover rounded-xl shadow-lg col-span-2 row-span-1"
-                     onerror="this.onerror=null; this.src='https://placehold.co/800x400/27272a/fff?text=NATURE+SCENE';">
-                <img src="./ski.png" alt="Group of friends smoking Aube vape during a ski session break" 
-                     class="w-full h-full object-cover rounded-xl shadow-lg col-span-1 row-span-1"
-                     onerror="this.onerror=null; this.src='https://placehold.co/400x400/27272a/fff?text=SKI+SCENE';">
-                <img src="./Aube-nature.jpg" alt="Abstract nature detail" 
-                     class="w-full h-full object-cover rounded-xl shadow-lg col-span-1 row-span-1"
-                     onerror="this.onerror=null; this.src='https://placehold.co/400x400/27272a/fff?text=NATURE+DETAIL';">
-            </div>
+        <div class="relative h-[50vh] md:h-auto w-full parallax-bg" 
+             style="background-image: url('./Aube-nature.jpg');">
+             <div class="absolute inset-0 bg-black/20"></div>
         </div>
-        
-        <!-- Content Column (Right on Desktop, Bottom on Mobile) -->
-        <div class="flex items-center justify-center p-8 md:p-16 order-2 md:order-2">
-            <div class="max-w-xl">
-                <span class="text-lg uppercase tracking-widest text-aube-orange font-bold">Style de vie Q.C.</span>
-                <h2 class="text-4xl md:text-6xl bankster-style leading-none mt-3 mb-6">
-                    OÙ QUE LA <span class="text-cannon-blue">VIE</span> VOUS MÈNE
+
+        <div class="flex items-center justify-center p-10 md:p-20 bg-cannon-blue/10">
+            <div class="max-w-lg">
+                <h2 class="text-5xl md:text-7xl bankster-style text-cannon-blue mb-6">
+                    Nature <br>
+                    <span class="text-base-dark">Urbaine</span>
                 </h2>
-                <p class="text-xl text-gray-700 mb-8">
-                    Des pentes de ski à une soirée tranquille en nature, Aube s'adapte à votre moment. Notre formule est conçue pour les esprits actifs et exigeants, qui ne font aucun compromis sur la qualité de leur expérience.
+                <p class="text-xl text-gray-700 mb-8 leading-relaxed">
+                    Des forêts du Québec aux rues de Montréal. Aube est conçu pour ceux qui cherchent l'équilibre entre l'aventure et la détente. 
                 </p>
                 
-                <a href="#launch" class="inline-block text-base-dark bankster-style text-lg border-b-4 border-aube-orange pb-1 hover:text-cannon-blue transition duration-300">
-                    Préparez-vous pour le lancement &darr;
+                <div class="inline-block border-l-4 border-aube-orange pl-4">
+                    <p class="text-2xl font-bold text-base-dark italic">
+                        "Où que la vie vous mène."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="launch" class="split-section grid grid-cols-1 md:grid-cols-2">
+        
+        <div class="order-2 md:order-1 flex items-center justify-center p-10 md:p-20 bg-white">
+            <div class="max-w-lg">
+                <div class="inline-block bg-aube-orange text-white px-3 py-1 text-xs font-bold uppercase tracking-widest mb-4">Exclusivité SQDC</div>
+                
+                <h2 class="text-6xl md:text-8xl bankster-style text-base-dark mb-2">
+                    24 NOV
+                </h2>
+                <h3 class="text-3xl md:text-4xl bankster-style text-cannon-blue mb-8">
+                    Lancement Officiel
+                </h3>
+
+                <p class="text-lg text-gray-600 mb-10">
+                    Soyez les premiers à découvrir Aube. Disponible exclusivement à la SQDC à travers le Québec.
+                </p>
+
+                <a href="#" class="w-full md:w-auto inline-block text-center bg-base-dark text-white bankster-style text-xl py-4 px-10 hover:bg-aube-orange transition duration-300 shadow-xl">
+                    Trouver une succursale
                 </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- 4. Launch CTA Section: Text Left, Image Right (Aube-packaging-mockup) -->
-    <section id="launch" class="split-section grid grid-cols-1 md:grid-cols-2 bg-white">
-        
-        <!-- Content Column (Left on Desktop, Top on Mobile) -->
-        <div class="flex items-center justify-center p-8 md:p-16 order-2 md:order-1">
-            <div class="max-w-xl">
-                <h2 class="text-5xl md:text-7xl bankster-style text-aube-orange mb-6">
-                    LANCEMENT SQDC <span class="text-base-dark">24 NOVEMBRE</span>
-                </h2>
-                
-                <p class="text-2xl text-base-dark font-medium mb-8">
-                    Le grand jour approche. Aube sera disponible <strong class="text-aube-orange">exclusivement</strong> à la SQDC.
-                </p>
-                
-                <p class="text-lg text-gray-700 mb-10">
-                    Soyez les premiers à découvrir la nouvelle référence Full Spectrum au Québec, fièrement présentée par Oaziz Extracts et la marque Cannonfire.
-                </p>
-                
-                <a href="#" class="inline-block bg-aube-orange text-white bankster-style py-3 px-10 rounded-lg text-xl shadow-2xl hover:bg-[#b04216] transition duration-300 transform hover:scale-105">
-                    Trouver votre SQDC la plus proche
-                </a>
-                
-                <p class="text-sm text-gray-500 mt-6">
-                    Produit réservé aux consommateurs de 21 ans et plus.
+                <p class="mt-6 text-xs text-gray-400 uppercase tracking-wide">
+                    18+ | Contient du Cannabis | Consommez de façon responsable
                 </p>
             </div>
         </div>
-        
-        <!-- Image Column (Right on Desktop, Bottom on Mobile) -->
-        <div class="md:min-h-screen flex items-center justify-center p-8 md:p-0 order-1 md:order-2 bg-gray-100">
-            <img src="./Cannonfire-Aube-packaging-mockup.png" alt="High-quality product packaging mockup" 
-                 class="w-full max-w-md rounded-xl aube-shadow transition duration-500"
-                 onerror="this.onerror=null; this.src='https://placehold.co/800x800/f7f7f7/aube-orange?text=PACKAGING+MOCKUP';">
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-base-light border-t border-gray-200 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <!-- Company Logo -->
-            <img src="./Oaziz-Logo.webp" alt="Oaziz Extracts Company Logo" class="h-10 mx-auto mb-6 opacity-80"
-                 onerror="this.onerror=null; this.src='https://placehold.co/150x50/f7f7f7/1a1a1a?text=OAZIZ+EXTRACTS';">
-
-            <!-- Links/Legal -->
-            <div class="flex justify-center space-x-6 text-sm text-gray-600 mb-6">
-                <p>SQDC Exclusive • Vente au Québec</p>
-            </div>
+        <div class="order-1 md:order-2 relative h-[50vh] md:h-auto w-full bg-gray-100 flex items-center justify-center overflow-hidden group">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-100 via-gray-200 to-gray-300"></div>
             
-            <p class="text-xs text-gray-500">
-                &copy; <span id="year"></span> Oaziz Extracts. Tous droits réservés.
-            </p>
+            <img src="./Cannonfire-Aube-packaging-mockup.png" alt="Packaging Mockup" 
+                 class="relative z-10 w-3/4 max-w-md drop-shadow-2xl transition-transform duration-700 transform group-hover:scale-105 group-hover:-rotate-2"
+                 onerror="this.src='https://placehold.co/800x800/f7f7f7/CD4D1A?text=PACKAGING+MOCKUP'">
         </div>
+    </section>
+
+    <footer class="bg-base-dark text-white py-8 text-center border-t border-gray-800">
+        <p class="text-sm text-gray-500 font-mono">
+            &copy; <span id="year"></span> Oaziz Extracts Inc.
+        </p>
     </footer>
 
-    <!-- Scripts at the very end of the body for guaranteed loading order -->
     <script>
-        // Set current year in the footer
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
