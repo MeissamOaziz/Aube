@@ -76,7 +76,7 @@
         </button>
     </div>
 
-    <div id="content-wrapper">
+    <div id="content-wrapper" class="hidden"> 
 
         <div id="french-content" lang="fr">
             <div id="hero" class="split-section bg-base-dark">
@@ -398,17 +398,26 @@
         // AGE VERIFICATION LOGIC
         function checkAgeVerification() {
             const isVerified = localStorage.getItem('ageVerified');
+            const ageGate = document.getElementById('age-gate');
+            const contentWrapper = document.getElementById('content-wrapper');
+
             if (isVerified === 'true') {
-                document.getElementById('age-gate').classList.add('hidden');
+                ageGate.classList.add('hidden');
+                contentWrapper.classList.remove('hidden'); // SHOW CONTENT
             } else {
-                document.getElementById('age-gate').classList.remove('hidden');
+                ageGate.classList.remove('hidden'); // SHOW GATE
+                contentWrapper.classList.add('hidden'); // HIDE CONTENT
             }
         }
 
         function verifyAge(isAdult) {
+            const ageGate = document.getElementById('age-gate');
+            const contentWrapper = document.getElementById('content-wrapper');
+            
             if (isAdult) {
                 localStorage.setItem('ageVerified', 'true');
-                document.getElementById('age-gate').classList.add('hidden');
+                ageGate.classList.add('hidden');
+                contentWrapper.classList.remove('hidden'); // SHOW CONTENT
             } else {
                 alert('Vous devez avoir 21 ans ou plus pour accéder à ce site.');
                 // Attempt to close the current tab or redirect
