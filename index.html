@@ -159,7 +159,7 @@
                     </div>
                 </div>
                 <div class="img-wrapper order-1 lg:order-2 bg-gray-50">
-                    <img src="./Aube-product-SQDC.jpg" alt="Aube SQDC Product" class="img-cover" onerror="this.src='https://placehold.co/1000x1000/fff/CD4D1A?text=Aube-product-SQDC.jpg'">
+                    <img src="./aube-stm.jpg" alt="Aube STM Product" class="img-cover" onerror="this.src='https://placehold.co/1000x1000/fff/CD4D1A?text=aube-stm.jpg'">
                 </div>
             </div>
 
@@ -315,7 +315,7 @@
                     </div>
                 </div>
                 <div class="img-wrapper order-1 lg:order-2 bg-gray-50">
-                    <img src="./Aube-product-SQDC.jpg" alt="Aube SQDC Product" class="img-cover" onerror="this.src='https://placehold.co/1000x1000/fff/CD4D1A?text=Aube-product-SQDC.jpg'">
+                    <img src="./aube-stm.jpg" alt="Aube STM Product" class="img-cover" onerror="this.src='https://placehold.co/1000x1000/fff/CD4D1A?text=aube-stm.jpg'">
                 </div>
             </div>
 
@@ -346,4 +346,55 @@
                             <div class="grid grid-cols-2 gap-y-4 mb-6 text-sm md:text-base">
                                 <div><p class="text-gray-500 text-xs uppercase tracking-widest">THC</p><p class="font-bold text-xl">27.39%</p></div>
                                 <div><p class="text-gray-500 text-xs uppercase tracking-widest">CBD</p><p class="font-bold text-xl">33.90%</p></div>
-                                <div class="col-span-2"><p class="text-gray-500 text-xs uppercase tracking-widest">Total Terpenes</p><p class
+                                <div class="col-span-2"><p class="text-gray-500 text-xs uppercase tracking-widest">Total Terpenes</p><p class="font-bold text-xl text-cannon-blue">8.374%</p></div>
+                            </div>
+                            <div class="border-t border-gray-100 pt-4 space-y-2">
+                                <div class="flex justify-between text-sm font-mono text-gray-600"><span>Units:</span><span class="font-bold text-base-dark">9,336</span></div>
+                                <div class="flex justify-between text-sm font-mono text-gray-600"><span>Packaged On:</span><span class="font-bold text-base-dark">November 10th, 2025</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="bg-base-dark text-white py-10 text-center border-t border-white/10">
+                <div class="max-w-4xl mx-auto px-4">
+                    <a href="https://www.oaziz.ca" target="_blank" rel="noopener noreferrer" class="inline-block mb-6 opacity-80 hover:opacity-100 transition-opacity duration-300">
+                        <img src="./Oaziz-Logo.webp" alt="Oaziz Extracts Logo" class="h-12 w-auto mx-auto" onerror="this.src='https://placehold.co/150x50/333/eee?text=OAZIZ+EXTRACTS'">
+                    </a>
+                    <p class="text-sm text-gray-500 font-mono uppercase tracking-widest mb-2">&copy; <span id="year-en"></span> Oaziz Extracts Inc. All rights reserved.</p>
+                    <p class="text-xs text-gray-600">Product reserved for consumers 21 years and older.</p>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+    <script>
+        const currentYear = new Date().getFullYear();
+        document.getElementById('year-fr').textContent = currentYear;
+        document.getElementById('year-en').textContent = currentYear;
+
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const button = document.querySelector('#language-switcher button');
+            const frenchContent = document.getElementById('french-content');
+            const englishContent = document.getElementById('english-content');
+
+            if (html.lang === 'fr') {
+                html.lang = 'en';
+                button.textContent = 'FR'; // Click to switch to FR
+                frenchContent.classList.add('hidden');
+                englishContent.classList.remove('hidden');
+                console.log('Language switched to English (en).');
+            } else {
+                html.lang = 'fr';
+                button.textContent = 'EN'; // Click to switch to EN
+                englishContent.classList.add('hidden');
+                frenchContent.classList.remove('hidden');
+                console.log('Language switched back to French (fr).');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
