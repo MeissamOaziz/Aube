@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aube - Full Spectrum Vape Cartridge | Oaziz Extracts</title>
     
+    <meta name="robots" content="noindex, nofollow">
+
     <link rel="icon" href="./AUBE-LOGO.png" type="image/png">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -49,6 +51,25 @@
 
 <body class="antialiased">
 
+    <div id="age-gate" class="fixed inset-0 bg-base-dark bg-opacity-95 z-[999] flex items-center justify-center p-8 text-center text-white">
+        <div class="max-w-lg bg-base-dark border-4 border-aube-orange p-10 shadow-2xl">
+            <h2 class="font-bankster text-4xl mb-6 text-aube-orange">Vérification d'Âge</h2>
+            <p class="text-xl mb-8 font-medium">
+                Afin d'accéder à ce contenu, veuillez confirmer que vous avez **21 ans ou plus**, soit l'âge légal pour consommer du cannabis au Québec.
+            </p>
+            <p class="text-sm text-gray-500 mb-8">
+                Ce site n'est pas indexé publiquement et est réservé aux clients ou visiteurs accédant directement à ce lien.
+            </p>
+
+            <button onclick="verifyAge(true)" class="bg-aube-orange text-white font-bankster text-lg py-3 px-8 mx-2 rounded hover:bg-[#b04216] transition duration-300">
+                Oui, j'ai 21+
+            </button>
+            <button onclick="verifyAge(false)" class="bg-gray-700 text-white font-bankster text-lg py-3 px-8 mx-2 rounded hover:bg-gray-800 transition duration-300">
+                Non, quitter
+            </button>
+        </div>
+    </div>
+    
     <div id="language-switcher" class="fixed top-4 right-4 z-50">
         <button onclick="toggleLanguage()" class="bg-white/90 text-base-dark border border-base-dark/20 text-sm font-semibold py-1 px-3 rounded-full shadow-lg hover:bg-base-dark hover:text-white transition duration-300">
             EN
@@ -374,6 +395,34 @@
         document.getElementById('year-fr').textContent = currentYear;
         document.getElementById('year-en').textContent = currentYear;
 
+        // AGE VERIFICATION LOGIC
+        function checkAgeVerification() {
+            const isVerified = localStorage.getItem('ageVerified');
+            if (isVerified === 'true') {
+                document.getElementById('age-gate').classList.add('hidden');
+            } else {
+                document.getElementById('age-gate').classList.remove('hidden');
+            }
+        }
+
+        function verifyAge(isAdult) {
+            if (isAdult) {
+                localStorage.setItem('ageVerified', 'true');
+                document.getElementById('age-gate').classList.add('hidden');
+            } else {
+                alert('Vous devez avoir 21 ans ou plus pour accéder à ce site.');
+                // Attempt to close the current tab or redirect
+                if (window.history.length > 1) {
+                    window.history.back(); 
+                } else {
+                    window.location.href = 'https://www.sqdc.ca'; // Redirect to a safe site
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', checkAgeVerification);
+        
+        // LANGUAGE TOGGLE LOGIC
         function toggleLanguage() {
             const html = document.documentElement;
             const button = document.querySelector('#language-switcher button');
@@ -382,16 +431,14 @@
 
             if (html.lang === 'fr') {
                 html.lang = 'en';
-                button.textContent = 'FR'; // Click to switch to FR
+                button.textContent = 'FR';
                 frenchContent.classList.add('hidden');
                 englishContent.classList.remove('hidden');
-                console.log('Language switched to English (en).');
             } else {
                 html.lang = 'fr';
-                button.textContent = 'EN'; // Click to switch to EN
+                button.textContent = 'EN';
                 englishContent.classList.add('hidden');
                 frenchContent.classList.remove('hidden');
-                console.log('Language switched back to French (fr).');
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
