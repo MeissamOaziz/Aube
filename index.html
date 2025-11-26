@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aube - Full Spectrum Vape Cartridge | Oaziz Extracts</title>
+    <title>Aube - Distillat THC/CBD | Oaziz Extracts</title>
     
     <meta name="robots" content="noindex, nofollow">
 
@@ -29,7 +29,7 @@
                         }
                     }
                 }
-            }
+            };
         }
     </script>
     
@@ -50,7 +50,6 @@
         }
     </style>
 </head>
-
 <body class="antialiased">
 
     <div id="age-gate" class="fixed inset-0 bg-base-dark bg-opacity-95 z-[999] flex items-center justify-center p-8 text-center text-white">
@@ -266,6 +265,7 @@
 
 
         <div id="english-content" lang="en" class="hidden">
+            
             <div id="hero-en" class="split-section bg-base-dark">
                 <div class="img-wrapper order-1 lg:order-1">
                     <img src="/Aube/AUBESunrise.jpg" alt="Aube Hero" class="img-cover opacity-90" onerror="this.src='https://placehold.co/1000x1000/222/CD4D1A?text=AUBESunrise.jpg'">
@@ -291,7 +291,7 @@
                             AUBE is engineered for the highest level of vaping performance and an authentic experience.
                         </p>
 
-                        <a href="#product" class="group inline-block border-2 border-aube-orange text-aube-orange font-bankster text-xl py-4 px-10 hover:bg-aube-orange hover:text-white transition-all duration-300">
+                        <a href="#product-en" class="group inline-block border-2 border-aube-orange text-aube-orange font-bankster text-xl py-4 px-10 hover:bg-aube-orange hover:text-white transition-all duration-300">
                             Discover Aube <span class="inline-block transition-transform group-hover:translate-x-2">&rarr;</span>
                         </a>
                     </div>
@@ -446,8 +446,8 @@
         document.getElementById('year-fr').textContent = currentYear;
         document.getElementById('year-en').textContent = currentYear;
 
-        // AGE VERIFICATION LOGIC
-        function checkAgeVerification() {
+        // AGE VERIFICATION LOGIC (Attached to window for guaranteed global access)
+        window.checkAgeVerification = function() {
             const isVerified = localStorage.getItem('ageVerified');
             const ageGate = document.getElementById('age-gate');
             const contentWrapper = document.getElementById('content-wrapper');
@@ -461,7 +461,7 @@
             }
         }
 
-        function verifyAge(isAdult) {
+        window.verifyAge = function(isAdult) {
             const ageGate = document.getElementById('age-gate');
             const contentWrapper = document.getElementById('content-wrapper');
             const denialMessage = document.getElementById('denial-message');
@@ -471,7 +471,7 @@
                 ageGate.classList.add('hidden');
                 contentWrapper.classList.remove('hidden'); // SHOW CONTENT
             } else {
-                // FIX: Instead of forbidden alert(), show denial message and redirect
+                // FIX: Shows denial message and redirects
                 denialMessage.classList.remove('hidden');
                 setTimeout(() => { denialMessage.style.opacity = '1'; }, 10); // Fade in
                 
@@ -481,10 +481,10 @@
             }
         }
 
-        document.addEventListener('DOMContentLoaded', checkAgeVerification);
+        document.addEventListener('DOMContentLoaded', window.checkAgeVerification);
         
-        // LANGUAGE TOGGLE LOGIC
-        function toggleLanguage() {
+        // LANGUAGE TOGGLE LOGIC (Attached to window for guaranteed global access)
+        window.toggleLanguage = function() {
             const html = document.documentElement;
             const button = document.querySelector('#language-switcher button');
             const frenchContent = document.getElementById('french-content');
